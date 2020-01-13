@@ -6,9 +6,7 @@
 using namespace std;
 
 void luckyOne(){
-	int number = 0;
-	int step = 0;
-	int biggest = 0;
+	int number = 0, step = 0, biggest = 0;
 	while (step < 5) {
 		cout << "Please imput a number: ";
 		cin >> number;
@@ -24,21 +22,17 @@ void luckyOne(){
 }
 
 /*void luckyTwo() {
-	int answer = 3;
-	int numbre = 0;
-	int multiple = 0;
+	int answer = 3, numbre = 0, multiple = 0;
 	while (multiple <= 50) {
 		multiple++;
 		numbre = multiple * 7;
-		answer = numbre+answer;
-		
+		answer = numbre+answer;	
 	}
 	cout << "The sum is " << answer;
 }
 
 void luckyTwo() {
-	int number = 0;
-	int sum = 0;
+	int number = 0, sum = 0;
 	while (number <= 50) {
 		number++;
 		if ((number % 7) > 0) {
@@ -57,8 +51,24 @@ void luckyThree() {
 
 }
 
-void luckyFour() {
-
+void luckyFive() {
+	int response, step = 1, test = 0, end = 0;
+	cout << "Please enter a number.    ";
+	cin >> response;
+	test = (response / 2);
+	while (step <= test) {
+		step++;
+		if (response % step == 0) {
+			end = 1;
+			break;
+		}	
+	}
+	if (end == 0) {
+		cout << "this number is prime";
+	}
+	else {
+		cout << "this number is not prime";
+	}
 }
 
 int main() {
@@ -75,6 +85,6 @@ int main() {
 		luckyThree();
 	}
 	else if (lucky == 5) {
-		luckyFour();
+		luckyFive();
 	}
 }
