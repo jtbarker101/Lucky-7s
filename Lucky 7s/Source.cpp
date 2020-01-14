@@ -6,7 +6,7 @@
 using namespace std;
 
 void luckyOne(){
-	int number = 0, step = 0, biggest = 0, smallest = 0;
+	int number = 0, step = 0, biggest = 0, smallest = 1000;
 	while (step < 5) {
 		cout << "Please imput one number: ";
 		cin >> number;
@@ -32,9 +32,8 @@ void luckyTwo() {
 		numbre = multiple * 7;
 		answer = numbre + answer;	
 	}
-	cout << "The sum is " << answer;
+	cout << "The sum is " << answer << endl;
 }
-////////////////////////////////////////////////////////////////////////
 /*void luckyTwo() {
 	int number = 0, sum = 0;
 	while (number <= 50) {
@@ -50,7 +49,7 @@ void luckyTwo() {
 	}	
 	cout << "The sum is " << sum;
 }*/
-
+////////////////////////////////////////////////////////////////////////
 void luckyThree() {
 	//Write a program that calculates and prints the first 10 terms of the factorial sequence.
 	int step = 10, number, factor = 1;
@@ -76,10 +75,10 @@ void luckyFour() {
 		}
 	}
 	if (flag == 1) {
-		cout << "this string is not a palindrome.";
+		cout << "this string is not a palindrome." << endl;
 	}
 	else {
-		cout << "this string is a palindrome.";
+		cout << "this string is a palindrome." << endl;
 	}
 }
 ////////////////////////////////////////////////////////////////////////
@@ -96,10 +95,10 @@ void luckyFive() {
 		}	
 	}
 	if (end == 0) {
-		cout << "this number is prime";
+		cout << "this number is prime" << endl;
 	}
 	else {
-		cout << "this number is not prime";
+		cout << "this number is not prime" << endl;
 	}
 }
 ////////////////////////////////////////////////////////////////////////
@@ -114,6 +113,9 @@ void luckySeven() {
 	and print the string with the most characters. You may assume that number of strings in 
 	the file is greater than
 	*/
+	int n;
+	cout << "please enter a positive number: ";
+	cin >> n;
 }
 ////////////////////////////////////////////////////////////////////////
 int main() {
@@ -128,4 +130,23 @@ int main() {
 	else if (lucky == 6) luckySix();
 	else if (lucky == 7) luckySeven();
 	else return 0;
+
+	/*int start = 0;
+	cout << "press one to start: ";
+	cin >> start;
+	if (start == 1) {
+		cout << "THIS IS LUCKY ONE: HIGHS AND LOWS " << endl;
+		luckyOne();
+		cout << "THIS IS LUCKY TWO: SUM OF FIRST 50 " << endl;
+		luckyTwo();
+		cout << "THIS IS LUCKY THREE: FACTORIALS " << endl;
+		luckyThree();
+		cout << "THIS IS LUCKY FOUR: PALINDROME " << endl;
+		luckyFour();
+		luckyFour();
+		cout << "THIS IS LUCKY FIVE: PRIMES" << endl;
+		luckyFive();
+		luckyFive();
+	}
+	else return 0;*/
 }
