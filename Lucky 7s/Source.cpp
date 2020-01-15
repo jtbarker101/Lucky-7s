@@ -105,6 +105,15 @@ void luckyFive() {
 void luckySix() {
 	//Write a program that creates an array of integers using an initialization list 
 	//and calculates and displays the average of the values.
+	int list[] = { 7,36,98,4,-6,3 };
+	int total = 0, i = 0;
+	while (i<sizeof(list)/sizeof(int)) {
+		total = list[i] + total;
+		i++;
+	}
+	float average = total / 6.0;
+	cout << "The average is: " << average;
+	
 }
 ////////////////////////////////////////////////////////////////////////
 void luckySeven() {
@@ -116,6 +125,7 @@ void luckySeven() {
 	int n;
 	cout << "please enter a positive number: ";
 	cin >> n;
+
 }
 ////////////////////////////////////////////////////////////////////////
 int main() {
@@ -147,6 +157,10 @@ int main() {
 		cout << "THIS IS LUCKY FIVE: PRIMES" << endl;
 		luckyFive();
 		luckyFive();
+		cout << "THIS IS LUCKY SIX: AVERAGE LIST " << endl;
+		luckySix();
+		cout << "THIS IS LUCKY SEVEN: STRINGS AND WORDS " << endl;
+		luckySeven();
 	}
 	else return 0;*/
 }
