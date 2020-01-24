@@ -3,6 +3,7 @@
 // Lucky 7s
 
 #include<iostream>
+#include <fstream>
 using namespace std;
 
 void luckyOne(){
@@ -34,28 +35,13 @@ void luckyTwo() {
 	}
 	cout << "The sum is " << answer << endl;
 }
-/*void luckyTwo() {
-	int number = 0, sum = 0;
-	while (number <= 50) {
-		number++;
-		if ((number % 7) > 0) {
-		}
-		else {
-			sum = number + sum;
-		}
-		if (number == 50) {
-			break;
-		}
-	}	
-	cout << "The sum is " << sum;
-}*/
 ////////////////////////////////////////////////////////////////////////
 void luckyThree() {
 	//Write a program that calculates and prints the first 10 terms of the factorial sequence.
 	int step = 10, number, factor = 1;
 	for (number = 1; number <= step; number++) {
 		factor = factor * number;
-		cout << "the factor of " << number << " is " << factor << endl;
+		cout << "The factor of " << number << " is " << factor << endl;
 	}
 }
 ////////////////////////////////////////////////////////////////////////
@@ -105,14 +91,16 @@ void luckyFive() {
 void luckySix() {
 	//Write a program that creates an array of integers using an initialization list 
 	//and calculates and displays the average of the values.
-	int list[] = { 7,36,98,4,-6,3 };
+	int list[] = { 7,38,98,4,-6,3,1};
 	int total = 0, i = 0;
-	while (i<sizeof(list)/sizeof(int)) {
+	int items = (sizeof(list) / sizeof(int));
+	while (i < items) {
 		total = list[i] + total;
 		i++;
 	}
-	float average = total / 6.0;
-	cout << "The average is: " << average;
+	double average = total / 6.0;
+	cout << "The total is: " << total << endl;
+	cout << "The average is: " << average << endl;
 	
 }
 ////////////////////////////////////////////////////////////////////////
@@ -120,16 +108,41 @@ void luckySeven() {
 	/*Write a program that gets a positive integer n from the user and creates an array of n. 
 	The program should read strings from a file, fill the array with the first n strings, 
 	and print the string with the most characters. You may assume that number of strings in 
-	the file is greater than
-	*/
+	the file is greater than*/
+	
 	int n;
-	cout << "please enter a positive number: ";
+	ifstream fin("input.in"); //always validate that you actually have a file
+	if (!fin) {
+		cerr << "file not found . . . . . ";
+		exit(2);
+	}
+	cout << "Please select a number of words you want: ";
 	cin >> n;
 
+	//creates an array while program is running
+	string* strArr = new string[n];
+
+	string words = " ";
+	int i = 0;
+	while (i < n) {
+		fin >> strArr[i];
+		i++;
+	}
+	//print the content of the loop
+	for (int i = 0; i < n; i++)
+	{
+		if ((strArr[i].size()) > (words.size())) {
+			words = strArr[i];
+			
+		}
+		cout << strArr[i] << " ";
+	}
+	cout << endl << "the largest word was " << words << endl;
 }
 ////////////////////////////////////////////////////////////////////////
 int main() {
 	int lucky;
+	string enter;
 	cout << "which Lucky do you want to test ";
 	cin >> lucky;
 	if (lucky == 1) luckyOne();
@@ -139,28 +152,35 @@ int main() {
 	else if (lucky == 5) luckyFive();
 	else if (lucky == 6) luckySix();
 	else if (lucky == 7) luckySeven();
-	else return 0;
-
-	/*int start = 0;
-	cout << "press one to start: ";
-	cin >> start;
-	if (start == 1) {
+	else if (lucky == 8) {
 		cout << "THIS IS LUCKY ONE: HIGHS AND LOWS " << endl;
 		luckyOne();
+		cout << "--------------------------------------------"<< endl;
 		cout << "THIS IS LUCKY TWO: SUM OF FIRST 50 " << endl;
 		luckyTwo();
+		cin >> enter;
+		cout << "--------------------------------------------" << endl;
 		cout << "THIS IS LUCKY THREE: FACTORIALS " << endl;
 		luckyThree();
+		cin >> enter;
+		cout << "--------------------------------------------" << endl;
 		cout << "THIS IS LUCKY FOUR: PALINDROME " << endl;
 		luckyFour();
 		luckyFour();
+		cin >> enter;
+		cout << "--------------------------------------------" << endl;
 		cout << "THIS IS LUCKY FIVE: PRIMES" << endl;
 		luckyFive();
 		luckyFive();
+		cin >> enter;
+		cout << "--------------------------------------------" << endl;
 		cout << "THIS IS LUCKY SIX: AVERAGE LIST " << endl;
 		luckySix();
+		cin >> enter;
+		cout << "--------------------------------------------" << endl;
 		cout << "THIS IS LUCKY SEVEN: STRINGS AND WORDS " << endl;
 		luckySeven();
+		cout << "--------------------------------------------" << endl;
 	}
-	else return 0;*/
+	else return 0;
 }
