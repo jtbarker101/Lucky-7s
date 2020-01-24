@@ -7,7 +7,7 @@
 using namespace std;
 
 void luckyOne(){
-	int number = 0, step = 0, biggest = 0, smallest = 1000;
+	int number = 0, step = 0, biggest = 0, smallest = 100;
 	while (step < 5) {
 		cout << "Please imput one number: ";
 		cin >> number;
@@ -15,15 +15,12 @@ void luckyOne(){
 		if (number > biggest) {
 			biggest = number;
 		}
-		else if (number < smallest) {
+		if (number < smallest) {
 			smallest = number;
 		}
-		else if (step == 5) {
-			cout << "The largest number was " << biggest << endl;
-			cout << "The smallest number was " << smallest << endl;
-			break;
-		}
 	}
+	cout << "The largest number was " << biggest << endl;
+	cout << "The smallest number was " << smallest << endl;
 }
 ////////////////////////////////////////////////////////////////////////
 void luckyTwo() {
